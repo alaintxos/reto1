@@ -22,6 +22,8 @@ public class Lectura {
 			archivo = new File("C:\\Users\\admin1\\Desktop\\prueba.txt");
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
+			System.out.println("Archivo txt");
+			System.out.println("***");
 			while ((linea = br.readLine()) != null)
 				System.out.println(linea);
 		} catch (Exception e) {
@@ -40,6 +42,8 @@ public class Lectura {
 			frcsv = new FileReader(rutaArchivo);
 			BufferedReader entradaArchivo = new BufferedReader(frcsv);
 			String lineacsv = entradaArchivo.readLine();
+			System.out.println("Archivo csv");
+			System.out.println("***");
 			while (lineacsv != null) {
 				palabras = lineacsv.split(",");
 				System.out.println("Id: " + palabras[0]);
@@ -71,7 +75,8 @@ public class Lectura {
 			FileReader frdoc = new FileReader(archivo);
 			BufferedReader brdoc = new BufferedReader(frdoc);
 			linea = null;
-
+			System.out.println("Archivo doc");
+			System.out.println("***");
 			while ((linea = brdoc.readLine()) != null)
 				System.out.println(linea);
 		} catch (Exception e) {
