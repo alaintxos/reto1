@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Lectura {
 	File archivo = null;
@@ -13,15 +14,19 @@ public class Lectura {
 	String linea;
 	String[] palabras;
 
+	public String LecturaEntradaEstandarString(Scanner sc) {
+		System.out.print("Introduce el texto que mas desees: ");
+		return sc.nextLine();	
+	}
+	
 	public void leerficherotxt() throws IOException {
-
+		Abrirfitxero abrir = new Abrirfitxero();
 		// lectura desde fichero txt
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			archivo = new File("C:\\Users\\admin1\\Desktop\\prueba.txt");
-			fr = new FileReader(archivo);
-			br = new BufferedReader(fr);
+			br = abrir.abrirfitxerotxt();
+			
 			System.out.println("Archivo txt");
 			System.out.println("***");
 			while ((linea = br.readLine()) != null)
@@ -34,14 +39,12 @@ public class Lectura {
 	}
 
 	public void leerficherocsv() throws IOException {
-		FileReader frcsv = null;
+		Abrirfitxero abrir = new Abrirfitxero();
 		// lectura desde fichero csv
 		try {
 
-			rutaArchivo = "C:\\Users\\admin1\\Desktop\\prueba.csv";
-			frcsv = new FileReader(rutaArchivo);
-			BufferedReader entradaArchivo = new BufferedReader(frcsv);
-			String lineacsv = entradaArchivo.readLine();
+			br= abrir.abrirfitxerocsv();
+			String lineacsv = br.readLine();
 			System.out.println("Archivo csv");
 			System.out.println("***");
 			while (lineacsv != null) {
@@ -53,31 +56,30 @@ public class Lectura {
 				System.out.println("Editorial: " + palabras[3]);
 				System.out.println("Fecha Edicion: " + palabras[5]);
 				System.out.println("************");
-				lineacsv = entradaArchivo.readLine();
+				lineacsv = br.readLine();
 
 			}
 		} catch (IOException ex) {
 			System.out.println("Error en la apertura del archivo " + ex.toString());
 		} finally {
-			frcsv.close();
+			fr.close();
 			
 		}
 
 	}
 
 	public void leerficherodoc() throws IOException {
-
+		 Abrirfitxero abrir = new Abrirfitxero();
+			
 		// lectura fichero doc
 		try {
 			// Apertura del fichero y creacion de BufferedReader para poder
 			// hacer una lectura comoda (disponer del metodo readLine()).
-			archivo = new File("C:\\Users\\admin1\\Desktop\\prueba.doc");
-			FileReader frdoc = new FileReader(archivo);
-			BufferedReader brdoc = new BufferedReader(frdoc);
+			br=abrir.abrirfitxerodoc();
 			linea = null;
 			System.out.println("Archivo doc");
 			System.out.println("***");
-			while ((linea = brdoc.readLine()) != null)
+			while ((linea = br.readLine()) != null)
 				System.out.println(linea);
 		} catch (Exception e) {
 			e.printStackTrace();

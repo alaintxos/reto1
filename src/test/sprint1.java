@@ -14,7 +14,7 @@ class sprint1 {
 	Lectura lectura = new Lectura();
 	Escritura escritura = new Escritura();
 
-	@Test
+	/*@Test
 	void entradaestandarporteclado() {
 		String data = "ydgfyg gf df yus 54854 45gf 454 ";
 		InputStream stdin = System.in;
@@ -44,7 +44,7 @@ class sprint1 {
 
 	//	escritura.CrearLibroEntradaEstandar();
 		
-	}
+	}*/
 	
 
 }

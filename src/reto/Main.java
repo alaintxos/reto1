@@ -28,7 +28,7 @@ public class Main {
 			switch (menu) {
 			case 1:
 				System.out.println("Has seleccionado la opcion 1, escribir un texto salida estandar");
-				escritura.EscribirSalidaEstandar(sc);
+				escritura.EscribirSalidaEstandar(sc, lectura);
 				break;
 			case 2:
 				System.out.println("Has seleccionado la opcion 2,Crear un Libro y escribir en fichero");

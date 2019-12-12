@@ -13,14 +13,14 @@ public class Escritura {
 	private boolean seguir;
 	private String frase = "";
 
-	public void EscribirSalidaEstandar(Scanner sc) {
+	public void EscribirSalidaEstandar(Scanner sc, Lectura lectura) {
 			
-		System.out.print("Introduce el texto que mas desees: ");
-		sc.nextLine();
-		frase = sc.nextLine();
+		frase = lectura.LecturaEntradaEstandarString(sc);
 		System.out.println(frase);
 
 	}
+	
+	
 	
 	public Libro CrearLibroEntradaEstandar(Scanner sc, Libro libro) {
 		
